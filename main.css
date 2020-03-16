@@ -35,6 +35,23 @@ html {
     color: #fff3e0;
 }
 
+p {
+    color: #666;
+    font-size: .75rem;
+    position: absolute;
+    right: 1.5rem;
+    text-align: right;
+    top: 1.5rem;
+}
+
+kbd {
+    background-color: #666;
+    border-radius: .2em;
+    color: #eee;
+    font-size: .8em;
+    padding: .2em .5em;
+}
+
 footer {
     bottom: 1rem;
     font-size: .8rem;

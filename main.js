@@ -3,7 +3,7 @@ const loading = document.getElementById('loading'),
     button = document.getElementById('generate');
 let dict;
 
-const getWord = () => () => {
+const getWord = () => {
     word.textContent = dict[Math.floor(
         Math.random() * dict.length
     )];
@@ -19,8 +19,13 @@ const getWord = () => () => {
     }
 })().then(() => {
     dict = localStorage['dict'].split('\n');
-    button.onclick = getWord();
-    button.click();
+    button.onclick = getWord;
+    document.onkeydown = event => {
+        switch (event.code) {
+            case 'Enter':
+            case 'Space':
+                getWord();
+        }
+    }
+    getWord();
 });
-
-getWord();
